@@ -17,6 +17,7 @@ namespace COCOMO
             InitializeComponent();
         }
 
+
         private void solveBTN_Click(object sender, EventArgs e)
         {
             
@@ -40,9 +41,7 @@ namespace COCOMO
             {
                 typeDDL.SelectedIndex = 2;
             }
-            
-
-
+           
         }
 
         private void typeDDL_SelectedIndexChanged(object sender, EventArgs e)
