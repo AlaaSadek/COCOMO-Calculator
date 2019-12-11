@@ -34,7 +34,7 @@
             this.calculatedEffort = new System.Windows.Forms.TextBox();
             this.effortBTN = new System.Windows.Forms.Button();
             this.tdevBTN = new System.Windows.Forms.Button();
-            this.actualBTN = new System.Windows.Forms.Button();
+            this.attributesBTN = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // inputSize
@@ -100,23 +100,23 @@
             this.tdevBTN.UseVisualStyleBackColor = true;
             this.tdevBTN.Click += new System.EventHandler(this.tdevBTN_Click);
             // 
-            // actualBTN
+            // attributesBTN
             // 
-            this.actualBTN.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.actualBTN.Location = new System.Drawing.Point(348, 247);
-            this.actualBTN.Name = "actualBTN";
-            this.actualBTN.Size = new System.Drawing.Size(138, 66);
-            this.actualBTN.TabIndex = 8;
-            this.actualBTN.Text = "Calculate Actual Effort";
-            this.actualBTN.UseVisualStyleBackColor = true;
-            this.actualBTN.Click += new System.EventHandler(this.actualBTN_Click);
+            this.attributesBTN.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.attributesBTN.Location = new System.Drawing.Point(357, 247);
+            this.attributesBTN.Name = "attributesBTN";
+            this.attributesBTN.Size = new System.Drawing.Size(138, 66);
+            this.attributesBTN.TabIndex = 8;
+            this.attributesBTN.Text = "Cost Driver Attributes";
+            this.attributesBTN.UseVisualStyleBackColor = true;
+            this.attributesBTN.Click += new System.EventHandler(this.attributesBTN_Click);
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(537, 382);
-            this.Controls.Add(this.actualBTN);
+            this.Controls.Add(this.attributesBTN);
             this.Controls.Add(this.tdevBTN);
             this.Controls.Add(this.effortBTN);
             this.Controls.Add(this.calculatedEffort);
@@ -137,7 +137,7 @@
         private System.Windows.Forms.TextBox calculatedEffort;
         private System.Windows.Forms.Button effortBTN;
         private System.Windows.Forms.Button tdevBTN;
-        private System.Windows.Forms.Button actualBTN;
+        private System.Windows.Forms.Button attributesBTN;
     }
 }
 

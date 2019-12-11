@@ -13,7 +13,7 @@ namespace COCOMO
     public partial class Form1 : Form
     {
         public static ProjectType project = new ProjectType();
-        double EI = 0.0;
+        public static double EI = 0.0;
         double TDEV = 0.0;
 
         public Form1()
@@ -58,11 +58,25 @@ namespace COCOMO
 
         private void typeDDL_SelectedIndexChanged(object sender, EventArgs e)
         {
-           
+            if (typeDDL.Text == "Organic")
+            {
+                project = new ProjectType(Program.organic.getA(), Program.organic.getB(), Program.organic.getC(), Program.organic.getD(), Program.organic.Gettype());
+
+            }
+            else if (typeDDL.Text == "Semi-Detached")
+            {
+                project = new ProjectType(Program.semidetached.getA(), Program.semidetached.getB(), Program.semidetached.getC(), Program.semidetached.getD(), Program.semidetached.Gettype());
+
+            }
+            else if (typeDDL.Text == "Embeded")
+            {
+                project = new ProjectType(Program.embeded.getA(), Program.embeded.getB(), Program.embeded.getC(), Program.embeded.getD(), Program.embeded.Gettype());
+
+            }
         }
 
 
-        private void effortBTN_Click(object sender, EventArgs e)
+            private void effortBTN_Click(object sender, EventArgs e)
         {
             EI = Math.Pow(project.getA() * int.Parse(inputSize.Text), project.getB());
             string ei = EI.ToString();
@@ -80,7 +94,13 @@ namespace COCOMO
 
         private void actualBTN_Click(object sender, EventArgs e)
         {
+            
+        }
 
+        private void attributesBTN_Click(object sender, EventArgs e)
+        {
+            CDattributes cdattributes = new CDattributes();
+            cdattributes.ShowDialog();
         }
     }
 }
