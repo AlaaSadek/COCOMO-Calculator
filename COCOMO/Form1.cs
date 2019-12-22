@@ -78,7 +78,7 @@ namespace COCOMO
 
             private void effortBTN_Click(object sender, EventArgs e)
         {
-            EI = Math.Pow(project.getA() * int.Parse(inputSize.Text), project.getB());
+            EI = project.getA() * Math.Pow( int.Parse(inputSize.Text), project.getB());
             string ei = EI.ToString();
            calculatedEffort.Text = ei;
         }
@@ -86,7 +86,7 @@ namespace COCOMO
         private void tdevBTN_Click(object sender, EventArgs e)
         {
 
-            TDEV = Math.Pow(project.getC() * EI, project.getD());
+            TDEV = project.getC() * Math.Pow(  EI, project.getD());
             string tdev = TDEV.ToString();
             calculatedEffort.Text = tdev;
 
