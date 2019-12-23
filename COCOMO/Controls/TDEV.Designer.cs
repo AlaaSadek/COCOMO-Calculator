@@ -66,6 +66,7 @@
             this.calculatedTDEV.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.calculatedTDEV.Location = new System.Drawing.Point(415, 236);
             this.calculatedTDEV.Name = "calculatedTDEV";
+            this.calculatedTDEV.ReadOnly = true;
             this.calculatedTDEV.Size = new System.Drawing.Size(195, 31);
             this.calculatedTDEV.TabIndex = 19;
             // 
@@ -137,9 +138,9 @@
             this.label5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(53)))), ((int)(((byte)(88)))), ((int)(((byte)(172)))));
             this.label5.Location = new System.Drawing.Point(177, 91);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(335, 23);
+            this.label5.Size = new System.Drawing.Size(340, 23);
             this.label5.TabIndex = 33;
-            this.label5.Text = "Please enter KLOC and select project type\r\n";
+            this.label5.Text = "Please enter KLOC and select project type!\r\n";
             // 
             // TDEV
             // 

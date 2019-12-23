@@ -25,14 +25,34 @@ namespace COCOMO.Controls
 
         private void calcBTN_Click(object sender, EventArgs e)
         {
-           
-            double TDEV = COCOMO.Controls.Effort.project.getC() * Math.Pow(COCOMO.Controls.Effort.EI, COCOMO.Controls.Effort.project.getD());
-            string tdev = TDEV.ToString();
-            calculatedTDEV.Text = tdev;
+            if (inputSize.Text == "" || typeDDL.Text == "")
+            {
+                MessageBox.Show("Please enter data!");
+            }
+
+            else
+            {
+                double TDEV = COCOMO.Controls.Effort.project.getC() * Math.Pow(COCOMO.Controls.Effort.EI, COCOMO.Controls.Effort.project.getD());
+                string tdev = TDEV.ToString();
+                calculatedTDEV.Text = tdev;
+            }
+            
         }
 
         private void inputSize_TextChanged(object sender, EventArgs e)
         {
+            if (inputSize.Text.ToString() != "" && System.Text.RegularExpressions.Regex.IsMatch(inputSize.Text, "[^0-9]"))
+            {
+                MessageBox.Show("Please enter numbers only!");
+                inputSize.Text = inputSize.Text.Remove(inputSize.Text.Length - 1);
+                return;
+            }
+            if (inputSize.Text.ToString() != "" && double.Parse(inputSize.Text.ToString()) == 0.0)
+            {
+                MessageBox.Show("KLOC must be greater than ZERO!");
+                inputSize.Text = inputSize.Text.Remove(inputSize.Text.Length - 1);
+                return;
+            }
             if (inputSize.Text.Length == 0)
             {
                 typeDDL.SelectedIndex = -1;
@@ -57,7 +77,11 @@ namespace COCOMO.Controls
 
 
             }
-            COCOMO.Controls.Effort.inputKLOC = double.Parse(inputSize.Text.ToString());
+            if (inputSize.Text.Length > 0)
+            {
+                COCOMO.Controls.Effort.inputKLOC = double.Parse(inputSize.Text.ToString());
+
+            }
         }
 
         private void CalcBTN_Click(object sender, EventArgs e)

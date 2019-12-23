@@ -26,7 +26,7 @@ namespace COCOMO.Controls
 
         }
 
-     
+
         private void calculatedEffort_TextChanged(object sender, EventArgs e)
         {
 
@@ -41,6 +41,19 @@ namespace COCOMO.Controls
 
         private void inputSize_TextChanged_1(object sender, EventArgs e)
         {
+           
+            if (inputSize.Text.ToString() != "" && System.Text.RegularExpressions.Regex.IsMatch(inputSize.Text, "[^0-9]"))
+            {
+                MessageBox.Show("Please enter numbers only!");
+                inputSize.Text = inputSize.Text.Remove(inputSize.Text.Length - 1);
+                return;
+            }
+            if (inputSize.Text.ToString() != "" && double.Parse(inputSize.Text.ToString()) == 0.0)
+            {
+                MessageBox.Show("KLOC must be greater than ZERO!");
+                inputSize.Text = inputSize.Text.Remove(inputSize.Text.Length - 1);
+                return;
+            }
             if (inputSize.Text.Length == 0)
             {
                 typeDDL.SelectedIndex = -1;
@@ -63,16 +76,26 @@ namespace COCOMO.Controls
                 typeDDL.SelectedIndex = 2;
                 project = new ProjectType(Program.embeded.getA(), Program.embeded.getB(), Program.embeded.getC(), Program.embeded.getD(), Program.embeded.Gettype());
 
+            }
+            if (inputSize.Text.Length > 0)
+            {
+                inputKLOC = double.Parse(inputSize.Text.ToString());
 
             }
-            inputKLOC = double.Parse(inputSize.Text.ToString());
         }
 
         private void calcBTN_Click(object sender, EventArgs e)
         {
-            EI = project.getA() * Math.Pow(int.Parse(inputSize.Text), project.getB());
-            string ei = EI.ToString();
-            calculatedEffort.Text = ei;
+            if (inputSize.Text == "" || typeDDL.Text == "")
+            {
+                MessageBox.Show("Please enter data!");
+            }
+            else
+            {
+                EI = project.getA() * Math.Pow(int.Parse(inputSize.Text), project.getB());
+                string ei = EI.ToString();
+                calculatedEffort.Text = ei;
+            }
         }
 
         private void typeDDL_SelectedIndexChanged_1(object sender, EventArgs e)

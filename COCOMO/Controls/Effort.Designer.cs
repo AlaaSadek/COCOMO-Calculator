@@ -89,9 +89,11 @@
             // 
             // calculatedEffort
             // 
+            this.calculatedEffort.BackColor = System.Drawing.SystemColors.ButtonFace;
             this.calculatedEffort.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.calculatedEffort.Location = new System.Drawing.Point(415, 236);
             this.calculatedEffort.Name = "calculatedEffort";
+            this.calculatedEffort.ReadOnly = true;
             this.calculatedEffort.Size = new System.Drawing.Size(195, 31);
             this.calculatedEffort.TabIndex = 27;
             // 
@@ -137,9 +139,9 @@
             this.label5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(53)))), ((int)(((byte)(88)))), ((int)(((byte)(172)))));
             this.label5.Location = new System.Drawing.Point(177, 91);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(335, 23);
+            this.label5.Size = new System.Drawing.Size(340, 23);
             this.label5.TabIndex = 32;
-            this.label5.Text = "Please enter KLOC and select project type\r\n";
+            this.label5.Text = "Please enter KLOC and select project type!\r\n";
             // 
             // Effort
             // 

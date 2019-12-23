@@ -56,14 +56,31 @@ namespace COCOMO.Controls
                 }
             }
 
-            calculatedResult.Text = total.ToString();
+            if (total != 1 && COCOMO.Controls.Effort.EI != 0.0)
+            {
+                calculatedResult.Text = total.ToString();
+            }
+
+            else
+            {
+                MessageBox.Show("Please calculate effort then try again!");
+            }
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
-            double answer = 1;
-            answer = total * COCOMO.Controls.Effort.EI;
-            calculatedResult.Text = answer.ToString();
+            if (total != 1)
+            {
+                double answer = 1;
+                answer = total * COCOMO.Controls.Effort.EI;
+                calculatedResult.Text = answer.ToString();
+            }
+
+            else
+            {
+                MessageBox.Show("Please calculate effort adjustement factor then try again!");
+            }
+            
         }
 
         private void CostDriver_Load(object sender, EventArgs e)
