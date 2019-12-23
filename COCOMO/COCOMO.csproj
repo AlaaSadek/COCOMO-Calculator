@@ -63,6 +63,12 @@
     <Compile Include="Controls\Home.Designer.cs">
       <DependentUpon>Home.cs</DependentUpon>
     </Compile>
+    <Compile Include="Controls\Intermediate.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\Intermediate.Designer.cs">
+      <DependentUpon>Intermediate.cs</DependentUpon>
+    </Compile>
     <Compile Include="Controls\TDEV.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -92,6 +98,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Controls\Home.resx">
       <DependentUpon>Home.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\Intermediate.resx">
+      <DependentUpon>Intermediate.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Controls\TDEV.resx">
       <DependentUpon>TDEV.cs</DependentUpon>

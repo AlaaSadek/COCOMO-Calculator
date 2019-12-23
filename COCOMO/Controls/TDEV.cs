@@ -22,21 +22,33 @@ namespace COCOMO.Controls
         {
 
         }
-
+        public void SetInputSize(string inputS)
+        {
+            inputSize.Text = inputS;
+        }
+        public void SetTypeDDL (string inputType)
+        {
+            typeDDL.Text = inputType;
+        }
         private void calcBTN_Click(object sender, EventArgs e)
         {
-            if (inputSize.Text == "" || typeDDL.Text == "")
-            {
-                MessageBox.Show("Please enter data!");
-            }
+           
 
+             if (COCOMO.Controls.Effort.EI == 0)
+            {
+                MessageBox.Show("Please calculate effort then try again!");
+            }
             else
             {
                 double TDEV = COCOMO.Controls.Effort.project.getC() * Math.Pow(COCOMO.Controls.Effort.EI, COCOMO.Controls.Effort.project.getD());
                 string tdev = TDEV.ToString();
-                calculatedTDEV.Text = tdev;
+                calculatedTDEV.Text = Math.Round(double.Parse(tdev), 3).ToString(); ;
+                inputSize.Text = COCOMO.Controls.Effort.inputKLOC.ToString();
+                typeDDL.Text = COCOMO.Controls.Effort.projectSizeIn.ToString();
+                effortBOX.Text = Math.Round(COCOMO.Controls.Effort.EI,3).ToString();
+ 
             }
-            
+
         }
 
         private void inputSize_TextChanged(object sender, EventArgs e)
@@ -52,48 +64,26 @@ namespace COCOMO.Controls
                 MessageBox.Show("KLOC must be greater than ZERO!");
                 inputSize.Text = inputSize.Text.Remove(inputSize.Text.Length - 1);
                 return;
+                }
+                
+                if (inputSize.Text.Length > 0)
+                {
+                    COCOMO.Controls.Effort.inputKLOC = double.Parse(inputSize.Text.ToString());
+
+                }
             }
-            if (inputSize.Text.Length == 0)
+
+            private void CalcBTN_Click(object sender, EventArgs e)
             {
-                typeDDL.SelectedIndex = -1;
+                COCOMO.Controls.Effort.EI = COCOMO.Controls.Effort.project.getA() * Math.Pow(int.Parse(inputSize.Text), COCOMO.Controls.Effort.project.getB());
+                string ei = COCOMO.Controls.Effort.EI.ToString();
+          
             }
-            else if (int.Parse(inputSize.Text) < 50)
-            {
-                typeDDL.SelectedIndex = 0;
-                COCOMO.Controls.Effort.project = new ProjectType(Program.organic.getA(), Program.organic.getB(), Program.organic.getC(), Program.organic.getD(), Program.organic.Gettype());
 
-
-            }
-            else if (int.Parse(inputSize.Text) > 50 && int.Parse(inputSize.Text) < 300)
-            {
-                typeDDL.SelectedIndex = 1;
-                COCOMO.Controls.Effort.project = new ProjectType(Program.semidetached.getA(), Program.semidetached.getB(), Program.semidetached.getC(), Program.semidetached.getD(), Program.semidetached.Gettype());
-
-            }
-            else if (int.Parse(inputSize.Text) >= 300)
-            {
-                typeDDL.SelectedIndex = 2;
-                COCOMO.Controls.Effort.project = new ProjectType(Program.embeded.getA(), Program.embeded.getB(), Program.embeded.getC(), Program.embeded.getD(), Program.embeded.Gettype());
-
-
-            }
-            if (inputSize.Text.Length > 0)
-            {
-                COCOMO.Controls.Effort.inputKLOC = double.Parse(inputSize.Text.ToString());
-
-            }
-        }
-
-        private void CalcBTN_Click(object sender, EventArgs e)
-        {
-            COCOMO.Controls.Effort.EI = COCOMO.Controls.Effort.project.getA() * Math.Pow(int.Parse(inputSize.Text), COCOMO.Controls.Effort.project.getB());
-            string ei = COCOMO.Controls.Effort.EI.ToString();
-            calculatedTDEV.Text = ei;
-        }
-
-        private void typeDDL_SelectedIndexChanged(object sender, EventArgs e)
+        private void effortBOX_TextChanged(object sender, EventArgs e)
         {
 
         }
     }
-}
+    }
+

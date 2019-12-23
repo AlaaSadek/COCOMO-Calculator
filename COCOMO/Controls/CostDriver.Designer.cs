@@ -56,7 +56,6 @@
             this.lowList = new System.Windows.Forms.CheckedListBox();
             this.vlowList = new System.Windows.Forms.CheckedListBox();
             this.calcBTN = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
             this.label22 = new System.Windows.Forms.Label();
             this.calculatedResult = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
@@ -440,35 +439,20 @@
             this.calcBTN.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.calcBTN.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.calcBTN.ForeColor = System.Drawing.Color.White;
-            this.calcBTN.Location = new System.Drawing.Point(665, 81);
+            this.calcBTN.Location = new System.Drawing.Point(668, 167);
             this.calcBTN.Name = "calcBTN";
-            this.calcBTN.Size = new System.Drawing.Size(145, 49);
+            this.calcBTN.Size = new System.Drawing.Size(145, 47);
             this.calcBTN.TabIndex = 57;
             this.calcBTN.Text = "Effort Adjustment Factor";
             this.calcBTN.UseVisualStyleBackColor = false;
             this.calcBTN.Click += new System.EventHandler(this.calcBTN_Click);
-            // 
-            // button1
-            // 
-            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(59)))), ((int)(((byte)(78)))), ((int)(((byte)(118)))));
-            this.button1.FlatAppearance.BorderSize = 0;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.ForeColor = System.Drawing.Color.White;
-            this.button1.Location = new System.Drawing.Point(665, 160);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(145, 49);
-            this.button1.TabIndex = 58;
-            this.button1.Text = "Actual Effort";
-            this.button1.UseVisualStyleBackColor = false;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // label22
             // 
             this.label22.AutoSize = true;
             this.label22.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label22.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(59)))), ((int)(((byte)(78)))), ((int)(((byte)(118)))));
-            this.label22.Location = new System.Drawing.Point(668, 320);
+            this.label22.Location = new System.Drawing.Point(668, 262);
             this.label22.Name = "label22";
             this.label22.Size = new System.Drawing.Size(87, 29);
             this.label22.TabIndex = 60;
@@ -477,11 +461,12 @@
             // calculatedResult
             // 
             this.calculatedResult.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.calculatedResult.Location = new System.Drawing.Point(668, 360);
+            this.calculatedResult.Location = new System.Drawing.Point(668, 302);
             this.calculatedResult.Name = "calculatedResult";
             this.calculatedResult.ReadOnly = true;
             this.calculatedResult.Size = new System.Drawing.Size(140, 26);
             this.calculatedResult.TabIndex = 59;
+            this.calculatedResult.TextChanged += new System.EventHandler(this.calculatedResult_TextChanged);
             // 
             // CostDriver
             // 
@@ -489,7 +474,6 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.label22);
             this.Controls.Add(this.calculatedResult);
-            this.Controls.Add(this.button1);
             this.Controls.Add(this.calcBTN);
             this.Controls.Add(this.label21);
             this.Controls.Add(this.label20);
@@ -555,7 +539,6 @@
         private System.Windows.Forms.CheckedListBox lowList;
         private System.Windows.Forms.CheckedListBox vlowList;
         private System.Windows.Forms.Button calcBTN;
-        private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Label label22;
         private System.Windows.Forms.TextBox calculatedResult;
     }

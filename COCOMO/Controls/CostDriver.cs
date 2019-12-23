@@ -13,6 +13,9 @@ namespace COCOMO.Controls
     public partial class CostDriver : UserControl
     {
         double total = 1;
+        double answer = 1;
+        static public double EAF = 0;
+        static public bool eafIsCalc = false;
         public CostDriver()
         {
             InitializeComponent();
@@ -20,6 +23,7 @@ namespace COCOMO.Controls
 
         private void calcBTN_Click(object sender, EventArgs e)
         {
+            total = 1;
             for (int i = 0; i < vlowList.Items.Count; i++)
             {
                 if (vlowList.GetItemChecked(i))
@@ -56,12 +60,16 @@ namespace COCOMO.Controls
                 }
             }
 
-            if (total != 1 && COCOMO.Controls.Effort.EI != 0.0)
+            if ( COCOMO.Controls.Effort.EI != 0.0)
             {
-                calculatedResult.Text = total.ToString();
+               
+                EAF = Math.Round(total, 3);
+                calculatedResult.Text = EAF.ToString();
+                eafIsCalc = true;
+
             }
 
-            else
+            else 
             {
                 MessageBox.Show("Please calculate effort then try again!");
             }
@@ -69,11 +77,15 @@ namespace COCOMO.Controls
 
         private void button1_Click(object sender, EventArgs e)
         {
+             answer = 1;
+
             if (total != 1)
             {
-                double answer = 1;
+                
                 answer = total * COCOMO.Controls.Effort.EI;
-                calculatedResult.Text = answer.ToString();
+
+                calculatedResult.Text = Math.Round(answer, 3).ToString();
+
             }
 
             else
@@ -84,6 +96,11 @@ namespace COCOMO.Controls
         }
 
         private void CostDriver_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void calculatedResult_TextChanged(object sender, EventArgs e)
         {
 
         }

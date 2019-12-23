@@ -12,6 +12,7 @@ namespace COCOMO
 {
     public partial class Form1 : Form
     {
+       
         public Form1()
         {
             InitializeComponent();
@@ -60,5 +61,11 @@ namespace COCOMO
             teamPanel.BringToFront();
         }
 
+        private void intermediateBTN_Click(object sender, EventArgs e)
+        {
+            SidePanel.Height = intermediateBTN.Height;
+            SidePanel.Top = intermediateBTN.Top;
+            intermediatePanel.BringToFront();
+        }
     }
 }

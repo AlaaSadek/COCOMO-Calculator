@@ -79,6 +79,7 @@ namespace COCOMO.Controls
             }
             if (inputSize.Text.Length > 0)
             {
+                
                 inputKLOC = double.Parse(inputSize.Text.ToString());
 
             }
@@ -92,10 +93,13 @@ namespace COCOMO.Controls
             }
             else
             {
-                EI = project.getA() * Math.Pow(int.Parse(inputSize.Text), project.getB());
+                EI = project.getA() * Math.Pow(double.Parse(inputSize.Text), project.getB());
                 string ei = EI.ToString();
-                calculatedEffort.Text = ei;
+                calculatedEffort.Text = Math.Round(double.Parse(ei), 3).ToString();
+                //COCOMO.Controls.TDEV.typeDDL.Text = typeDDL.Text;
+                //COCOMO.Controls.TDEV.inputSize.Text = inputSize.Text;
             }
+
         }
 
         private void typeDDL_SelectedIndexChanged_1(object sender, EventArgs e)

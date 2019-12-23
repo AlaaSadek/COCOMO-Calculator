@@ -30,6 +30,7 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.panel1 = new System.Windows.Forms.Panel();
+            this.intermediateBTN = new System.Windows.Forms.Button();
             this.SidePanel = new System.Windows.Forms.Panel();
             this.attributesBTN = new System.Windows.Forms.Button();
             this.tdevBTN = new System.Windows.Forms.Button();
@@ -42,6 +43,7 @@
             this.label2 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.exitBTN = new System.Windows.Forms.Button();
+            this.intermediatePanel = new COCOMO.Controls.Intermediate();
             this.homePanel = new COCOMO.Controls.Home();
             this.tdevPanel = new COCOMO.Controls.TDEV();
             this.effortPanel = new COCOMO.Controls.Effort();
@@ -55,6 +57,7 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(39)))), ((int)(((byte)(40)))));
+            this.panel1.Controls.Add(this.intermediateBTN);
             this.panel1.Controls.Add(this.SidePanel);
             this.panel1.Controls.Add(this.attributesBTN);
             this.panel1.Controls.Add(this.tdevBTN);
@@ -66,6 +69,23 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(209, 583);
             this.panel1.TabIndex = 0;
+            // 
+            // intermediateBTN
+            // 
+            this.intermediateBTN.FlatAppearance.BorderSize = 0;
+            this.intermediateBTN.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.intermediateBTN.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.intermediateBTN.ForeColor = System.Drawing.Color.White;
+            this.intermediateBTN.Image = ((System.Drawing.Image)(resources.GetObject("intermediateBTN.Image")));
+            this.intermediateBTN.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.intermediateBTN.Location = new System.Drawing.Point(12, 351);
+            this.intermediateBTN.Name = "intermediateBTN";
+            this.intermediateBTN.Size = new System.Drawing.Size(197, 54);
+            this.intermediateBTN.TabIndex = 5;
+            this.intermediateBTN.Text = "       Intermediate Model";
+            this.intermediateBTN.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.intermediateBTN.UseVisualStyleBackColor = true;
+            this.intermediateBTN.Click += new System.EventHandler(this.intermediateBTN_Click);
             // 
             // SidePanel
             // 
@@ -83,7 +103,7 @@
             this.attributesBTN.ForeColor = System.Drawing.Color.White;
             this.attributesBTN.Image = ((System.Drawing.Image)(resources.GetObject("attributesBTN.Image")));
             this.attributesBTN.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.attributesBTN.Location = new System.Drawing.Point(12, 272);
+            this.attributesBTN.Location = new System.Drawing.Point(12, 278);
             this.attributesBTN.Name = "attributesBTN";
             this.attributesBTN.Size = new System.Drawing.Size(197, 54);
             this.attributesBTN.TabIndex = 4;
@@ -100,7 +120,7 @@
             this.tdevBTN.ForeColor = System.Drawing.Color.White;
             this.tdevBTN.Image = ((System.Drawing.Image)(resources.GetObject("tdevBTN.Image")));
             this.tdevBTN.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.tdevBTN.Location = new System.Drawing.Point(12, 201);
+            this.tdevBTN.Location = new System.Drawing.Point(12, 205);
             this.tdevBTN.Name = "tdevBTN";
             this.tdevBTN.Size = new System.Drawing.Size(197, 54);
             this.tdevBTN.TabIndex = 4;
@@ -117,7 +137,7 @@
             this.effortBTN.ForeColor = System.Drawing.Color.White;
             this.effortBTN.Image = ((System.Drawing.Image)(resources.GetObject("effortBTN.Image")));
             this.effortBTN.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.effortBTN.Location = new System.Drawing.Point(12, 130);
+            this.effortBTN.Location = new System.Drawing.Point(12, 132);
             this.effortBTN.Name = "effortBTN";
             this.effortBTN.Size = new System.Drawing.Size(197, 54);
             this.effortBTN.TabIndex = 4;
@@ -228,6 +248,13 @@
             this.exitBTN.UseVisualStyleBackColor = true;
             this.exitBTN.Click += new System.EventHandler(this.exitBTN_Click);
             // 
+            // intermediatePanel
+            // 
+            this.intermediatePanel.Location = new System.Drawing.Point(209, 160);
+            this.intermediatePanel.Name = "intermediatePanel";
+            this.intermediatePanel.Size = new System.Drawing.Size(817, 423);
+            this.intermediatePanel.TabIndex = 11;
+            // 
             // homePanel
             // 
             this.homePanel.Location = new System.Drawing.Point(209, 160);
@@ -277,6 +304,7 @@
             this.Controls.Add(this.effortPanel);
             this.Controls.Add(this.costDriverPanel);
             this.Controls.Add(this.teamPanel);
+            this.Controls.Add(this.intermediatePanel);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Form1";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -309,6 +337,8 @@
         private Controls.Home homePanel;
         private Controls.CostDriver costDriverPanel;
         private Controls.Team teamPanel;
+        private System.Windows.Forms.Button intermediateBTN;
+        private Controls.Intermediate intermediatePanel;
     }
 }
 
