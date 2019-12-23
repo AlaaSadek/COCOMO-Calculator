@@ -45,23 +45,59 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="CDattributes.cs">
-      <SubType>Form</SubType>
+    <Compile Include="Controls\CostDriver.cs">
+      <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="CDattributes.Designer.cs">
-      <DependentUpon>CDattributes.cs</DependentUpon>
+    <Compile Include="Controls\CostDriver.Designer.cs">
+      <DependentUpon>CostDriver.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\Effort.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\Effort.Designer.cs">
+      <DependentUpon>Effort.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\Home.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\Home.Designer.cs">
+      <DependentUpon>Home.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\TDEV.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\TDEV.Designer.cs">
+      <DependentUpon>TDEV.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\Team.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\Team.Designer.cs">
+      <DependentUpon>Team.cs</DependentUpon>
     </Compile>
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form1.Designer.cs">
+    <Compile Include="Form1.designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="ProjectType.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="CDattributes.resx">
-      <DependentUpon>CDattributes.cs</DependentUpon>
+    <EmbeddedResource Include="Controls\CostDriver.resx">
+      <DependentUpon>CostDriver.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\Effort.resx">
+      <DependentUpon>Effort.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\Home.resx">
+      <DependentUpon>Home.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\TDEV.resx">
+      <DependentUpon>TDEV.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\Team.resx">
+      <DependentUpon>Team.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
@@ -86,7 +122,9 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <None Include="App.config" />
+    <None Include="App.config">
+      <SubType>Designer</SubType>
+    </None>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

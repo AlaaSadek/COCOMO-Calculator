@@ -1,51 +1,24 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
-using System.Data;
 using System.Drawing;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace COCOMO
+namespace COCOMO.Controls
 {
-    public partial class CDattributes : Form
+    public partial class CostDriver : UserControl
     {
-        public CDattributes()
+        double total = 1;
+        public CostDriver()
         {
             InitializeComponent();
         }
-        double total = 1;
 
-        private void vlowList_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void CDattributes_Load(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label12_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label19_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void aefortBTN_Click(object sender, EventArgs e)
-        {
-            double answer = 1;
-            answer = total * Form1.EI;
-            MessageBox.Show(answer.ToString());
-        }
-
-        private void eafBTN_Click(object sender, EventArgs e)
+        private void calcBTN_Click(object sender, EventArgs e)
         {
             for (int i = 0; i < vlowList.Items.Count; i++)
             {
@@ -83,7 +56,20 @@ namespace COCOMO
                 }
             }
 
-            MessageBox.Show(total.ToString());
+            calculatedResult.Text = total.ToString();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            double answer = 1;
+            answer = total * COCOMO.Controls.Effort.EI;
+            calculatedResult.Text = answer.ToString();
+        }
+
+        private void CostDriver_Load(object sender, EventArgs e)
+        {
+
         }
     }
-}
+    }
+
