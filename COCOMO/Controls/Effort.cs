@@ -96,8 +96,7 @@ namespace COCOMO.Controls
                 EI = project.getA() * Math.Pow(double.Parse(inputSize.Text), project.getB());
                 string ei = EI.ToString();
                 calculatedEffort.Text = Math.Round(double.Parse(ei), 3).ToString();
-                //COCOMO.Controls.TDEV.typeDDL.Text = typeDDL.Text;
-                //COCOMO.Controls.TDEV.inputSize.Text = inputSize.Text;
+               
             }
 
         }

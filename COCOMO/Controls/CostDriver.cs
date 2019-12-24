@@ -23,11 +23,14 @@ namespace COCOMO.Controls
 
         private void calcBTN_Click(object sender, EventArgs e)
         {
+
             total = 1;
             for (int i = 0; i < vlowList.Items.Count; i++)
             {
+
                 if (vlowList.GetItemChecked(i))
                 {
+
                     total *= double.Parse(vlowList.Items[i].ToString());
                 }
             }
@@ -36,6 +39,13 @@ namespace COCOMO.Controls
                 if (lowList.GetItemChecked(i))
                 {
                     total *= double.Parse(lowList.Items[i].ToString());
+                }
+            }
+            for (int i = 0; i < nominalList.Items.Count; i++)
+            {
+                if (nominalList.GetItemChecked(i))
+                {
+                    total *= double.Parse(nominalList.Items[i].ToString());
                 }
             }
             for (int i = 0; i < highList.Items.Count; i++)
@@ -60,16 +70,16 @@ namespace COCOMO.Controls
                 }
             }
 
-            if ( COCOMO.Controls.Effort.EI != 0.0)
+            if (COCOMO.Controls.Effort.EI != 0.0)
             {
-               
+
                 EAF = Math.Round(total, 3);
                 calculatedResult.Text = EAF.ToString();
                 eafIsCalc = true;
 
             }
 
-            else 
+            else
             {
                 MessageBox.Show("Please calculate effort then try again!");
             }
@@ -77,11 +87,11 @@ namespace COCOMO.Controls
 
         private void button1_Click(object sender, EventArgs e)
         {
-             answer = 1;
+            answer = 1;
 
             if (total != 1)
             {
-                
+
                 answer = total * COCOMO.Controls.Effort.EI;
 
                 calculatedResult.Text = Math.Round(answer, 3).ToString();
@@ -92,7 +102,7 @@ namespace COCOMO.Controls
             {
                 MessageBox.Show("Please calculate effort adjustement factor then try again!");
             }
-            
+
         }
 
         private void CostDriver_Load(object sender, EventArgs e)
@@ -104,6 +114,97 @@ namespace COCOMO.Controls
         {
 
         }
+
+        private void vlowList_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            int index = vlowList.SelectedIndex;
+         
+            if (index != -1 && vlowList.GetItemChecked(index) && (lowList.GetItemChecked(index)
+                || highList.GetItemChecked(index) || vhighList.GetItemChecked(index)
+                || extrahighList.GetItemChecked(index) || nominalList.GetItemChecked(index)))
+            {
+                MessageBox.Show("Please select one only!");
+                vlowList.SetItemChecked(index, false);
+                vlowList.SelectedIndex = -1;
+
+            }
+        }
+
+        private void lowList_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            int index = lowList.SelectedIndex;
+
+            if ( index != -1 && lowList.GetItemChecked(index) && (vlowList.GetItemChecked(index)
+                || highList.GetItemChecked(index) || vhighList.GetItemChecked(index)
+                || extrahighList.GetItemChecked(index) || nominalList.GetItemChecked(index)))
+            {
+                MessageBox.Show("Please select one only!");
+                lowList.SetItemChecked(index, false);
+                lowList.SelectedIndex = -1;
+
+            }
+        }
+
+        private void nominalList_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            int index = nominalList.SelectedIndex;
+
+            if (index != -1 && nominalList.GetItemChecked(index) && (vlowList.GetItemChecked(index)
+                || highList.GetItemChecked(index) || vhighList.GetItemChecked(index)
+                || extrahighList.GetItemChecked(index) || lowList.GetItemChecked(index)))
+            {
+                MessageBox.Show("Please select one only!");
+                nominalList.SetItemChecked(index, false);
+                nominalList.SelectedIndex = -1;
+
+            }
+        }
+
+        private void highList_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            int index = highList.SelectedIndex;
+
+            if (index != -1 && highList.GetItemChecked(index) && (vlowList.GetItemChecked(index)
+                || nominalList.GetItemChecked(index) || vhighList.GetItemChecked(index)
+                || extrahighList.GetItemChecked(index) || lowList.GetItemChecked(index)))
+            {
+                MessageBox.Show("Please select one only!");
+                highList.SetItemChecked(index, false);
+                highList.SelectedIndex = -1;
+
+            }
+        }
+
+        private void vhighList_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            int index = vhighList.SelectedIndex;
+
+            if (index != -1 && vhighList.GetItemChecked(index) && (vlowList.GetItemChecked(index)
+                || nominalList.GetItemChecked(index) || highList.GetItemChecked(index)
+                || extrahighList.GetItemChecked(index) || lowList.GetItemChecked(index)))
+            {
+                MessageBox.Show("Please select one only!");
+                vhighList.SetItemChecked(index, false);
+                vhighList.SelectedIndex = -1;
+
+            }
+        }
+
+        private void extrahighList_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            int index = extrahighList.SelectedIndex;
+            if (index != -1 && extrahighList.GetItemChecked(index) && (vlowList.GetItemChecked(index)
+                || nominalList.GetItemChecked(index) || vhighList.GetItemChecked(index)
+                || highList.GetItemChecked(index) || lowList.GetItemChecked(index)))
+            {
+                MessageBox.Show("Please select one only!");
+                extrahighList.SetItemChecked(index, false);
+                extrahighList.SelectedIndex = -1;
+            }
+           
+
+        }
     }
-    }
+}
+    
 

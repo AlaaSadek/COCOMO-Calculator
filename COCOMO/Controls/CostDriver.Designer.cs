@@ -296,6 +296,7 @@
             this.extrahighList.Name = "extrahighList";
             this.extrahighList.Size = new System.Drawing.Size(85, 388);
             this.extrahighList.TabIndex = 35;
+            this.extrahighList.SelectedIndexChanged += new System.EventHandler(this.extrahighList_SelectedIndexChanged);
             // 
             // vhighList
             // 
@@ -323,6 +324,7 @@
             this.vhighList.Name = "vhighList";
             this.vhighList.Size = new System.Drawing.Size(133, 388);
             this.vhighList.TabIndex = 34;
+            this.vhighList.SelectedIndexChanged += new System.EventHandler(this.vhighList_SelectedIndexChanged);
             // 
             // highList
             // 
@@ -350,6 +352,7 @@
             this.highList.Name = "highList";
             this.highList.Size = new System.Drawing.Size(164, 388);
             this.highList.TabIndex = 33;
+            this.highList.SelectedIndexChanged += new System.EventHandler(this.highList_SelectedIndexChanged);
             // 
             // nominalList
             // 
@@ -377,6 +380,7 @@
             this.nominalList.Name = "nominalList";
             this.nominalList.Size = new System.Drawing.Size(170, 388);
             this.nominalList.TabIndex = 32;
+            this.nominalList.SelectedIndexChanged += new System.EventHandler(this.nominalList_SelectedIndexChanged);
             // 
             // lowList
             // 
@@ -404,6 +408,7 @@
             this.lowList.Name = "lowList";
             this.lowList.Size = new System.Drawing.Size(163, 388);
             this.lowList.TabIndex = 31;
+            this.lowList.SelectedIndexChanged += new System.EventHandler(this.lowList_SelectedIndexChanged);
             // 
             // vlowList
             // 
@@ -431,6 +436,7 @@
             this.vlowList.Name = "vlowList";
             this.vlowList.Size = new System.Drawing.Size(164, 388);
             this.vlowList.TabIndex = 30;
+            this.vlowList.SelectedIndexChanged += new System.EventHandler(this.vlowList_SelectedIndexChanged);
             // 
             // calcBTN
             // 
